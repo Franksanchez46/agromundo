@@ -1,0 +1,316 @@
+:root {
+    /* Definición de variables de colores para mantener una paleta de colores uniforme en todo el diseño */
+    --verde-vivo: #1cce1c;
+    --verde-suave: #E6F4EA;
+    --blanco-puro: #FFFFFF;
+    --gris-oscuro: #2F2F2F;
+    --verde-oscuro: #2b702b;
+}
+
+body {
+
+    /* Estilos generales del cuerpo de la página */
+    font-family: 'Poppins', sans-serif;
+    background: var(--verde-suave); /* Fondo con el color verde suave */
+    color: var(--gris-oscuro); /* Color de texto en gris oscuro */
+    min-height: 100vh; /* Altura mínima del cuerpo para ocupar toda la pantalla */
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 60px; /* Espacio superior para evitar que el contenido se superponga con la barra de navegación */
+}
+
+.card-img-top {
+    width: 100%;  /* Hace que la imagen ocupe todo el ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción original de la imagen */
+    object-fit: cover; /* Recorta la imagen si es necesario para llenar el espacio */
+
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center;     /* Centra el contenido horizontalmente */
+    height: 100px; /* Ajusta la altura que quieras para el espacio blanco */
+}
+
+/* .col-lg-3, .col-md-6 {
+    display: flex;
+    justify-content: center;
+}
+ */
+
+
+/* Hero Section Modern */
+.agro-hero {
+    position: relative;
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=1920') no-repeat center center/cover;
+    overflow: hidden;
+}
+
+.agro-hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    padding-bottom: 80px;
+}
+
+.agro-hero-caption {
+    max-width: 800px;
+    padding: 2rem;
+    background: #025d1f6f;
+    border-radius: 20px;
+    border: 1px solid rgba(20, 151, 48, 0.543);
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    top: -20px;
+}
+
+.agro-hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: #2b702b;
+    border-radius: 25px;
+    color: var(--blanco-puro);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.agro-hero-caption h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--blanco-puro);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.agro-hero-description {
+    font-size: 1.2rem;
+    color: var(--blanco-puro);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.agro-hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.agro-btn-primary {
+    background: var(--blanco-puro);
+    color: var(--verde-oscuro);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--blanco-puro);
+}
+
+.agro-btn-primary:hover {
+    background: transparent;
+    color: var(--blanco-puro);
+    transform: translateY(-3px);
+}
+
+.agro-btn-secondary {
+    background: transparent;
+    color: var(--blanco-puro);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--blanco-puro);
+}
+
+.agro-btn-secondary:hover {
+    background: var(--blanco-puro);
+    color: var(--verde-oscuro);
+    transform: translateY(-3px);
+}
+
+.agro-hero-shape {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: var(--verde-suave);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+    z-index: 3;
+}
+
+
+.pesticidas-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.pesticidas-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.abonos-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.abonos-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.animales-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.animales-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.conanimales-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.conanimales-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.conmascotas-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.conmascotas-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.conaves-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.conaves-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.medicamentos-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.medicamentos-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+.herramientas-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.herramientas-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+/* Estilos para el pie de página */
+/* Estilos para la parte inferior del footer */
+.footer-bottom {
+    background: linear-gradient(-135deg, #1cce1c, #2b702b); /* Aplica un degradado verde a la barra de navegación */
+    padding: 20px 0; /* Espaciado interno */
+    margin-top: 40px; /* Espacio superior */
+    text-align: center; /* Centra el contenido */
+}
+
+/* Estilos para el texto de derechos de autor */
+.copyright {
+    font-size: 0.9rem; /* Tamaño de fuente */
+}
+
+/* Estilos para resaltar el nombre de la marca en los derechos de autor */
+.copyright strong {
+    color: var(--verde-vivo); /* Color destacado */
+}
+
+
+/* Estilos para pantallas más pequeñas (responsive) */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 0; /* Ajusta el espaciado superior e inferior */
+    }
+    
+    /* Centra las secciones del footer en dispositivos móviles */
+    .footer-info, .footer-links, .footer-contact {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    /* Centra los enlaces de redes sociales */
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .container_1:hover input {
+        width: 180px; /* Más pequeño en pantallas chicas */
+    }
+
+    .btn-B {
+        width: 30px;
+        height: 30px;
+    }
+
+    .btn-B i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_1:hover input {
+        width: 140px; /* Aún más pequeño en celulares */
+    }
+
+    .btn-B {
+        width: 28px;
+        height: 28px;
+    }
+
+    .btn-B i {
+        font-size: 16px;
+    }
+}

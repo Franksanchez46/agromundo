@@ -1,0 +1,146 @@
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background: linear-gradient(135deg, var(--verde-vivo), var(--verde-oscuro));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999; /* Asegura que esté encima de otros elementos */
+    width: 100%;}
+
+.navbar-brand {
+    /* Estilos para el logo o nombre de la marca en la barra de navegación */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blanco-puro);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra para mejorar la legibilidad */
+}
+
+.nav-link {
+    /* Estilos para los enlaces dentro de la barra de navegación */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--blanco-puro) !important; /* Fuerza el color blanco */
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease; /* Efecto de transición suave */
+}
+
+.nav-link:hover {
+    color: var(--verde-suave) !important; /* Cambia el color del enlace al pasar el cursor */
+    transform: translateY(-2px); /* Mueve el enlace ligeramente hacia arriba */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Agrega un efecto de resplandor al texto */
+}
+
+/* Navbar Moderno */
+.navbar {
+    background: linear-gradient(-135deg, #1cce1c, #2b702b);
+    backdrop-filter: none; /* Desactiva el desenfoque */
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 0;
+    transition: all 0.3s ease;
+
+    position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+    top: 0; /* Posición en la parte superior */ 
+    left: 0; /* Alineado a la izquierda */  
+    right: 0; /* Alineado a la derecha */   
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna para la marca */
+    font-size: 1.8rem; /* Tamaño de fuente */
+    font-weight: 700; /* Fuente en negrita */
+    color: var(--blanco-puro); /* Color de la marca */
+    display: flex; /* Alinea elementos internos en fila */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 8px; /* Espaciado entre el icono y el texto */
+}
+
+.brand-icon {
+    color: var(--verde-vivo); /* Color del icono */
+    font-size: 1.5rem; /* Tamaño del icono */
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5)); /* Aplica un resplandor blanco */
+}
+
+.navbar-nav {
+    gap: 10px; /* Espaciado entre los elementos del menú */
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    font-weight: 500; /* Peso de la fuente medio */
+    font-size: 0.95rem; /* Tamaño del texto */
+    color: var(--blanco-puro) !important; /* Fuerza el color blanco */
+    padding: 0.5rem 1rem !important; /* Ajusta el espaciado interno */
+    border-radius: 25px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave en los cambios */
+    position: relative; /* Permite modificaciones en la posición */
+}
+
+/* Buscador personalizado */
+.buscador-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.buscador-contenedor .buscador-input {
+    outline: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 0px;
+    padding: 0 15px;
+    color: black;
+    border-radius: 50px;
+    font-size: 16px;
+    border: 1px solid #1cce1c;
+    transition: width 0.7s ease;
+    background-color: white;
+    position: relative;
+    right: -35px;
+}
+
+.buscador-contenedor .buscador-input::placeholder {
+    color: #aaa;
+}
+
+.buscador-contenedor .buscador-boton {
+    width: 35px;
+    height: 35px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.5s;
+    position: relative;
+    z-index: 2;
+}
+
+.buscador-contenedor .buscador-boton i {
+    font-size: 20px;
+    color: #1cce1c;
+    transition: all 0.7s ease;
+}
+
+.buscador-contenedor:hover .buscador-input {
+    width: 200px;
+}
+
+.buscador-contenedor .buscador-boton:hover {
+    background: #2b702b;
+}
+
+.buscador-contenedor .buscador-boton i:hover {
+    color: #ffffff;
+}

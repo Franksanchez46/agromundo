@@ -1,0 +1,22 @@
+/* public/css/alerts.css */
+
+/* Evita que la alerta mueva el contenido de fondo */
+body.swal2-shown {
+    overflow: hidden !important;
+    padding-right: 0 !important;
+}
+
+/* Opcional: asegura que el formulario no se vea afectado por cambios de margen/padding */
+form {
+    transition: none !important;
+    margin-top: 0 !important;
+}
+
+/* Asegura que el modal esté bien centrado */
+.swal2-popup {
+    margin: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    position: fixed !important;
+}

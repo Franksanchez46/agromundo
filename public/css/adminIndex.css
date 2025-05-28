@@ -1,0 +1,46 @@
+/* admin_index.css */
+
+/* Contenedor del formulario de filtro */
+/* Contenedor del formulario de filtro */
+.admin-filtro-form {
+    margin-bottom: 20px;
+    margin-left: 50px; /* Ajusta este valor según lo que necesites */
+}
+
+
+/* Input de búsqueda y select de categoría */
+.admin-filtro-form .form-control {
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+/* Botón verde personalizado (Filtrar) */
+.admin-btn-filtrar {
+    background-color: #2b702b;
+    color: #fff;
+    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.admin-btn-filtrar:hover {
+    background-color: #249624;
+}
+
+/* Botón "Limpiar" que conserva estilo Bootstrap pero iguala tamaño */
+.admin-btn-limpiar {
+    font-size: 14px;
+    padding: 6px 16px; /* Igual que el botón verde */
+    border-radius: 8px; /* Bordes redondeados iguales */
+    margin-left: 10px;
+}
+
+/* Botones alineados con algo de espacio */
+.admin-btns-group {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+}

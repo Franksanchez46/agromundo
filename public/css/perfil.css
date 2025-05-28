@@ -1,0 +1,121 @@
+/* Contenedor principal del perfil */
+.perfil-container {
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del perfil */
+.perfil-container h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* Secciones del perfil */
+.perfil-container .section {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil-container .section:last-child {
+    border-bottom: none;
+}
+
+.perfil-container .section div {
+    max-width: 75%;
+}
+
+.perfil-container .section strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.perfil-container .section p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Advertencias */
+.perfil-container .warning {
+    display: flex;
+    align-items: center;
+    color: #d89f00;
+    font-size: 14px;
+}
+
+.perfil-container .warning img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+/* Botón personalizado solo del perfil */
+.perfil-container .btn-actualizar {
+    background: linear-gradient(45deg, #28a745, #218838);
+    color: white;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.perfil-container .btn-actualizar:hover {
+    background: linear-gradient(#1d770b, #41cf24);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Otros botones solo del perfil */
+.perfil-container .btn-perfil {
+    background: white;
+    border: 1px solid #999;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.perfil-container .btn-perfil:hover {
+    background: #f0f0f0;
+}
+/* Imagen dentro del perfil (horizonta*/
+
+.perfil-container .section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    gap: 20px;
+}
+
+.perfil-container .section label {
+    width: 35%;
+    font-size: 15px;
+    font-weight: 500; /* más liviano que bold */
+    color: #444; /* un gris suave, menos fuerte que negro */
+    font-family: inherit; /* usa la misma fuente que el resto */
+    margin-bottom: 0;
+}
+
+
+.perfil-container .perfil-input {
+    width: 65%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}

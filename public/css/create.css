@@ -1,0 +1,156 @@
+/* texto de agregar */
+.mi-mt-5 {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .mi-cursor {
+    color: #909090;
+    font-weight: bold;
+    animation: mi-blink 1s steps(2, start) infinite;
+  }
+  
+  @keyframes mi-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  @keyframes mi-glow {
+    from {
+      text-shadow: 0 0 5px #b00f00, 0 0 10px #d7da00;
+    }
+    to {
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #00ffea;
+    }
+  }
+  
+  /* formulario */
+  .mi-formulario-nuevo-producto {
+      background-color: #e6f2e6; /* verde claro */
+      padding: 40px 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      font-family: 'Poppins', sans-serif;
+      color: #000;
+  }
+  
+  .mi-formulario-nuevo-producto h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 24px;
+  }
+  
+  .mi-formulario-nuevo-producto .mi-icono-mas {
+      font-size: 28px;
+      margin-right: 10px;
+  }
+  
+  .mi-formulario-nuevo-producto label {
+      display: block;
+      margin: 0px 0 5px;
+      font-weight: 500;
+  }
+  
+  .mi-formulario-nuevo-producto input[type="text"],
+  .mi-formulario-nuevo-producto textarea,
+  .mi-formulario-nuevo-producto input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #fff;
+      font-size: 14px;
+      box-sizing: border-box;
+  }
+  
+  .mi-formulario-nuevo-producto textarea {
+      height: 100px;
+      resize: none;
+  }
+  
+  /* Nuevo boton */
+  .mi-button {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .mi-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+  }
+  
+  .mi-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+      to left,
+      hsl(120deg 45% 18%) 0%,
+      hsl(120deg 45% 30%) 8%,
+      hsl(120deg 45% 30%) 92%,
+      hsl(120deg 45% 18%) 100%
+    );
+  }
+  
+  .mi-front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(120deg 45% 30%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+  }
+  
+  .mi-button:hover {
+    filter: brightness(110%);
+  }
+  
+  .mi-button:hover .mi-front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .mi-button:active .mi-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+  }
+  
+  .mi-button:hover .mi-shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+  }
+  
+  .mi-button:active .mi-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+  }
+  
+  .mi-button:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  /* Menu para editar */
+  

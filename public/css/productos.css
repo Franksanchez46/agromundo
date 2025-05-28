@@ -1,0 +1,152 @@
+/* Estilos para los productos */
+.products {
+    padding: 0 0 50px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 40px;
+    color: #2F2F2F;
+}
+
+.box-container {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta a un tamaño menor para móviles */
+    }
+
+    .box {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 28px; /* Ajusta el tamaño del título en pantallas pequeñas */
+    }
+
+    .box img {
+        height: 180px; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
+    }
+
+    .precio {
+        font-size: 14px;
+    }
+
+    .btn-2, .btn-3 {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.box {
+    border-top: 2px solid #1cce1c;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    background-color: #FFFFFF;
+    display: none;
+}
+
+.box:nth-child(1),
+.box:nth-child(2),
+.box:nth-child(3),
+.box:nth-child(4),
+.box:nth-child(5),
+.box:nth-child(6),
+.box:nth-child(7),
+.box:nth-child(8) {
+    display: inline-block;
+}
+
+.box img {
+    height: 200px;
+}
+
+.product-txt h3 {
+    font-size: 20px;
+    color: #2b702b;
+    margin-bottom: 10px;
+}
+
+.product-txt p {
+    margin-bottom: 25px;
+    color: #1cce1c;
+}
+
+.precio {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2b702b !important;
+}
+
+.btn-2, .btn-3 {
+    background-color: #2b702b;
+    margin-top: 50px;
+    display: inline-block;
+    padding: 11px 35px;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .btn-2, .btn-3 {
+        margin-top: 20px;
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+}
+
+
+.btn-2:hover, .btn-3:hover {
+    background-color: #1cce1c;
+}
+
+.btn-3 {
+    margin: 0;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+
+.testimonial {
+    padding: flex;
+    text-align: center;
+}
+
+.testimonial-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.testimonial-1 {
+    flex-basis: calc(50% - 20px);
+    padding: 25px;
+    text-align: left;
+    background-color: #E6F4EA;
+    border-top: 5px solid #1cce1c;
+}
+
+.testimonial-1 img {
+    width: 100px;
+}
+
+.testimonial-1 h4 {
+    font-size: 17px;
+    color: #2F2F2F;
+}
+
+.testimonial-1 p {
+    color: #2F2F2F;
+    margin-bottom: 25px;
+}
