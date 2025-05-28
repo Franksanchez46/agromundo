@@ -147,6 +147,7 @@ public function login(Request $request)
 
         // Verificar si el usuario es administrador
         if ($user->rol_id == 1) {
+            session(['modo_admin' => true]);
             return redirect()->route('admin.productos.index')->with('success', 'Bienvenido administrador.');
         }
 

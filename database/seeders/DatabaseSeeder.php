@@ -19,5 +19,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Agrega esta línea para llamar a tu seeder de categorías
+        $this->call([
+            CategoriaSeeder::class,
+        ]);
     }
 }

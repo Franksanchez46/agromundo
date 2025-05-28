@@ -100,3 +100,23 @@ echo evaluarSalario(500000);
 ?>
 </body>
 <br><br>
+<?php
+// Your code here!
+function evaluarSueldo($sueldo){
+    if($sueldo >= 1000000){
+        if($sueldo >= 3000000){
+            return "Sueldo Alto";
+        }else{
+            return "Sueldo Medio";
+        }
+    }else{
+        return "Sueldo Bajo";
+    }
+}
+
+echo evaluarSueldo(300000);
+echo "<br>";
+echo evaluarSueldo(100000);
+echo "<br>";
+echo evaluarSueldo(5000000);
+?>

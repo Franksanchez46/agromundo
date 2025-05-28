@@ -9,6 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes(['verify' => true, 'reset' => true, 'register' => false, 'login' => false]);
 // CRUD de productos
 Route::resource('productos', ProductoController::class);
 
@@ -136,3 +137,4 @@ Route::get('/buscar-ajax', [BusquedaController::class, 'ajax'])->name('busqueda.
 use App\Http\Controllers\BusquedaController;
 
 Route::get('/busqueda', [BusquedaController::class, 'buscar'])->name('busqueda.productos');
+

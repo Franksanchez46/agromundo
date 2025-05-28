@@ -25,5 +25,11 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
+
+    public function sendResetResponse($request, $response)
+{
+    return redirect($this->redirectPath())
+        ->with('success', '¡Contraseña restablecida correctamente! Ahora puedes iniciar sesión.');
+}
 }

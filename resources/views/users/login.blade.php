@@ -48,6 +48,10 @@
           <input type="submit" value="Iniciar sesión">
         </div>
 
+        <div class="forgot-password" style="text-align: center; margin: 10px 0;">
+          <a href="{{ route('password.request') }}">¿Olvidaste tu contraseña?</a>
+        </div>
+
         <div class="signup-link">
           ¿No tienes una cuenta? <a href="{{ url('/registro') }}">Regístrate aquí</a>
         </div>

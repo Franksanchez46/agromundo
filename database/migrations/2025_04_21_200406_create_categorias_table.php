@@ -19,11 +19,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-                DB::table('categorias')->insert([
-            ['nombre' => 'Pesticidas'],
-            ['nombre' => 'Abonos'],
-            ['nombre' => 'Herramientas'],
-        ]);
+
     
     }
 
