@@ -65,7 +65,12 @@
                     </a>
                 </li>
 
-                @include('components.carrito')
+              {{--   @include('components.carrito') --}}
+
+                        <a class="nav-link" href="#" id="icono-carrito" onclick="abrirCarrito()">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span id="contador-carrito">{{ session('carrito') ? array_sum(array_column(session('carrito'), 'cantidad')) : 0 }}</span>
+                        </a>
 
 
                 <!-- Dropdown de cuenta -->

@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\Categoria;
 use Illuminate\Support\Facades\Auth;
 
+
     // ...
 
 
@@ -115,6 +116,20 @@ public function index()
         }
 
         $producto->save();
+
+        // Guardar variantes si existen en el request
+if ($request->has('variantes')) {
+    foreach ($request->variantes as $variante) {
+        // Solo guarda si tiene tamaño y precio
+        if (!empty($variante['tamaño']) && !empty($variante['precio'])) {
+            $producto->variantes()->create([
+                'tamaño' => $variante['tamaño'],
+                'precio' => $variante['precio'],
+                'stock'  => $variante['stock'] ?? null,
+            ]);
+        }
+    }
+}
 
         return back()->with('success', 'Producto creado exitosamente.');
     }

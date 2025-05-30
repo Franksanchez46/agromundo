@@ -27,4 +27,9 @@ class Producto extends Model
     {
         return $this->hasMany(CartItem::class, 'product_id');
     }
+
+    public function variantes()
+    {
+        return $this->hasMany(Variante::class);
+    }
 }

@@ -101,7 +101,7 @@ Route::post('/logout', function () {
 use App\Http\Controllers\CartController;  // Importa el controlador
 /* Route::middleware(['auth'])->group(function () { */
 // Ruta para almacenar productos en el carrito
-Route::get('/cart', [CartController::class, 'index']);
+/* Route::get('/cart', [CartController::class, 'index']);
 
 Route::post('/cart/store', [CartController::class, 'store']);
 
@@ -109,7 +109,7 @@ Route::delete('/cart/destroy/{id}', [CartController::class, 'destroy']);
 
 Route::put('/cart/update/{id}', [CartController::class, 'update']);
 
-Route::delete('/cart/clear', [CartController::class, 'clear']);
+Route::delete('/cart/clear', [CartController::class, 'clear']); */
 /* }); */
 
 Route::get('/nosotro', function () {
@@ -138,3 +138,10 @@ use App\Http\Controllers\BusquedaController;
 
 Route::get('/busqueda', [BusquedaController::class, 'buscar'])->name('busqueda.productos');
 
+
+use App\Http\Controllers\CarritoController;
+Route::post('/carrito/agregar', [CarritoController::class, 'agregar'])->name('carrito.agregar');
+Route::post('/carrito/actualizar', [CarritoController::class, 'actualizar'])->name('carrito.actualizar');
+Route::post('/carrito/eliminar', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
+Route::post('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
+Route::get('/carrito/contenido', [CarritoController::class, 'contenido'])->name('carrito.contenido');

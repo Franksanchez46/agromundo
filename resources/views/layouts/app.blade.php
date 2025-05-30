@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/descripcion.css') }}">
     <link rel="stylesheet" href="{{ asset('css/adminIndex.css') }}">
     <link rel="stylesheet" href="{{ asset('css/buscador_flotante.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carrito.css') }}">
 
     <!-- Splide.js CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
@@ -50,6 +51,7 @@
     @include('partials.navbar_public')
 @endif
 
+@include('components.carrito')
 {{-- @include('components.buscador-flotante') --}}
 
 
@@ -81,6 +83,7 @@
 
     {{-- Scripts --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        @yield('scripts')
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/carrito.js') }}"></script>
     <script src="{{ asset('js/descripcion.js') }}"></script>
@@ -91,6 +94,9 @@
 
 
     @include('components.alerts')
+
+
+    {{-- Script para mostrar u ocultar contraseña --}}
 
 </body>
 </html>

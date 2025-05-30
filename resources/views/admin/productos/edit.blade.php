@@ -44,13 +44,36 @@
             <div class="form-group mb-3">
                 <label for="imagen">Cambiar imagen (opcional)</label>
                 <input type="file" id="imagen" name="imagen" class="mi-formulario-nuevo-producto">
-                @if($producto->imagen)
-                    <p>Imagen actual:</p>
-                    <img src="{{ asset('storage/' . $producto->imagen) }}" width="100">
-                @endif
+                <div id="preview-container" style="margin-top:10px;">
+                    <img id="preview-img" src="{{ asset('storage/' . $producto->imagen) }}" alt="Previsualización" style="max-width:100px;max-height:100px;border-radius:8px;object-fit:cover;">
+                </div>
             </div>
 
-            <!-- Mensajes de error -->
+            <!-- Variantes -->
+            <div class="form-group mb-3">
+                <label>Variantes (tamaños y precios)</label>
+                <div id="variantes-container">
+                    @foreach ($producto->variantes as $index => $variante)
+                    <div class="row variante-row mb-2">
+                        <div class="col">
+                            <input type="text" name="variantes[{{ $index }}][tamaño]" class="form-control" placeholder="Tamaño" value="{{ $variante->tamaño }}">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="variantes[{{ $index }}][precio]" class="form-control" placeholder="Precio" value="{{ $variante->precio }}">
+                        </div>
+                        <div class="col">
+                            <input type="number" name="variantes[{{ $index }}][stock]" class="form-control" placeholder="Stock" value="{{ $variante->stock }}">
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-danger btn-remove-variante">X</button>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+                <button type="button" id="add-variante" class="btn btn-primary btn-sm mt-2">Agregar variante</button>
+            </div>
+
+            <!-- Errores -->
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -60,10 +83,7 @@
                     </ul>
                 </div>
             @endif
-                        {{-- Agrega este botón donde desees, por ejemplo, arriba del formulario --}}
-{{--             <a href="{{ route('admin.productos.index') }}" class="btn btn-secondary mb-3">
-                <i class="fas fa-arrow-left"></i> Volver al listado
-            </a> --}}
+
             <!-- Botón -->
             <div style="text-align: center; margin: 20px 0;">
                 <button type="submit" class="mi-button">
@@ -75,4 +95,54 @@
         </form>
     </div>
 </main>
+@endsection
+
+@section('scripts')
+<script>
+let varianteIndex = {{ count($producto->variantes) }};
+document.getElementById('add-variante').addEventListener('click', function() {
+    const container = document.getElementById('variantes-container');
+    const row = document.createElement('div');
+    row.className = 'row variante-row mb-2';
+    row.innerHTML = `
+        <div class="col">
+            <input type="text" name="variantes[${varianteIndex}][tamaño]" class="form-control" placeholder="Tamaño (ej: 500g)">
+        </div>
+        <div class="col">
+            <input type="number" name="variantes[${varianteIndex}][precio]" class="form-control" placeholder="Precio">
+        </div>
+        <div class="col">
+            <input type="number" name="variantes[${varianteIndex}][stock]" class="form-control" placeholder="Stock">
+        </div>
+        <div class="col-auto">
+            <button type="button" class="btn btn-danger btn-remove-variante">X</button>
+        </div>
+    `;
+    container.appendChild(row);
+    varianteIndex++;
+});
+
+document.getElementById('variantes-container').addEventListener('click', function(e) {
+    if (e.target.classList.contains('btn-remove-variante')) {
+        e.target.closest('.variante-row').remove();
+    }
+});
+
+// Previsualización de imagen nueva
+document.getElementById('imagen').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const previewImg = document.getElementById('preview-img');
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+            previewImg.src = ev.target.result;
+            previewImg.style.display = 'block';
+        }
+        reader.readAsDataURL(file);
+    } else {
+        previewImg.src = '#';
+        previewImg.style.display = 'none';
+    }
+});
+</script>
 @endsection

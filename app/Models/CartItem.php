@@ -12,8 +12,17 @@ class CartItem extends Model
     protected $fillable = [
         'user_id',
         'product_id',
+        'variante_id',
+        'nombre',
+        'tamaño',
+        'imagen',
         'quantity',
         'price',
+    ];
+
+    protected $casts = [
+        'price' => 'float',
+        'quantity' => 'integer',
     ];
 
     // Relación con el usuario
@@ -28,17 +37,23 @@ class CartItem extends Model
         return $this->belongsTo(Producto::class, 'product_id');
     }
 
-    // Si quieres asegurar que siempre se guarde el precio cuando el producto es añadido al carrito
+    // Relación con la variante
+    public function variante()
+    {
+        return $this->belongsTo(Variante::class);
+    }
+
+    // Asignar automáticamente el precio desde el producto (opcional)
     public static function boot()
     {
         parent::boot();
 
         static::creating(function ($cartItem) {
-            // Asegurarse de que el precio es tomado del producto en el momento de la creación
             $producto = Producto::find($cartItem->product_id);
-            if ($producto) {
-                $cartItem->price = $producto->precio; // Guardar el precio actual del producto
+            if ($producto && is_null($cartItem->price)) {
+                $cartItem->price = $producto->precio;
             }
         });
     }
 }
+

@@ -98,3 +98,44 @@
     padding: 8px 25px;
     border-radius: 5px;
 }
+/* Botones pequeños, redondos y personalizados para el carrito */
+.btn-carrito {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 1rem;
+    line-height: 1;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 2px;
+    border: none;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-carrito-mas    { background: #198754; color: #fff; }      /* Verde */
+.btn-carrito-menos  { background: #6c757d; color: #fff; }      /* Gris */
+.btn-carrito-x      { background: #dc3545; color: #fff; }      /* Rojo */
+.btn-carrito-mas:hover    { background: #157347; }
+.btn-carrito-menos:hover  { background: #495057; }
+.btn-carrito-x:hover      { background: #a71d2a; }
+
+#cart-content {
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 80px; /* Espacio para el footer fijo */
+}
+
+#cart-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px solid #eee;
+    padding: 16px 16px 12px 16px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+    z-index: 10;
+}
