@@ -145,3 +145,27 @@ Route::post('/carrito/actualizar', [CarritoController::class, 'actualizar'])->na
 Route::post('/carrito/eliminar', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
 Route::post('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
 Route::get('/carrito/contenido', [CarritoController::class, 'contenido'])->name('carrito.contenido');
+
+use App\Http\Controllers\CategoriaController;
+
+
+ 
+Route::resource('categorias', CategoriaController::class)->names([
+    'index' => 'admin.categorias.index',
+    'create' => 'categorias.create',
+    'store' => 'admin.categorias.store',
+    'edit' => 'admin.categorias.edit',
+    'update' => 'categorias.update',
+    'destroy' => 'admin.categorias.destroy',
+]);
+
+
+/* Route::prefix('admin')->name('categorias.')->middleware('auth')->group(function () {
+    Route::resource('categorias', CategoriaController::class);
+}); */
+
+
+use App\Http\Controllers\Admin\CategoriaController as AdminCategoriaController;
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('categorias', AdminCategoriaController::class);
+});

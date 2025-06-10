@@ -70,6 +70,7 @@ public function index()
 
     $productos = Producto::all();
     $categoria = null;
+    $categorias = Categoria::all(); // Trae todas las categorías
 
     return view('productos.categoria', compact('productos', 'categoria'));
 }

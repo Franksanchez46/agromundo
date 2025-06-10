@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
             $table->string('nombre')->unique();
+            $table->string('slug')->unique();
+            $table->string('imagen')->nullable();
+            $table->text('descripcion')->nullable();
+            $table->string('icono')->nullable();
             $table->timestamps();
         });
 

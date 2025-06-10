@@ -65,12 +65,14 @@
                             <input type="number" name="variantes[{{ $index }}][stock]" class="form-control" placeholder="Stock" value="{{ $variante->stock }}">
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-danger btn-remove-variante">X</button>
+<button type="button" class="btn-x-personalizado btn-remove-variante">X</button>
                         </div>
                     </div>
                     @endforeach
                 </div>
-                <button type="button" id="add-variante" class="btn btn-primary btn-sm mt-2">Agregar variante</button>
+<button type="button" id="add-variante" class="btn admin-btn-filtrar">
+    <i class="fas fa-plus"></i> Agregar variante
+</button>
             </div>
 
             <!-- Errores -->

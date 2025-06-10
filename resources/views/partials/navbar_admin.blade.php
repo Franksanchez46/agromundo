@@ -24,11 +24,18 @@
                 </li>
 
                 <!-- Crear producto -->
-                <li class="nav-item">
+               {{--  <li class="nav-item">
                     <a class="nav-link" href="{{ route('productos.create') }}">
                         <i class="fa-solid fa-plus"></i> Crear producto
                     </a>
-                </li>
+                </li> --}}
+
+                    <!-- Enlace a categorías -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.categorias.index') }}">
+            <i class="fa-solid fa-layer-group"></i> Categorías
+        </a>
+    </li>
 
                 <!-- Menú desplegable del usuario -->
                 <li class="nav-item dropdown">

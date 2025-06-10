@@ -33,6 +33,43 @@
 
         <div class="container">
             <div class="row mb-5 g-4">
+
+
+                @include('partials.categorias')
+
+
+
+                   {{--          @foreach ($categorias as $categoria)
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 mb-4">
+                        @if ($categoria->imagen)
+                            <img src="{{ asset('storage/' . $categoria->imagen) }}" class="card-img-top" alt="{{ $categoria->nombre }}">
+                        @else
+                            <img src="{{ asset('categorias/default.jpg') }}" class="card-img-top" alt="{{ $categoria->nombre }}">
+                        @endif
+                        <div class="card-body text-center">
+                            <h5 class="card-title">
+                                <a href="{{ url('categoria/' . $categoria->slug) }}" target="_blank" class="categoria-link">
+                                    @if ($categoria->icono)
+                                        <h5 class="card-title"><i class="{{ $categoria->icono }} me-2"></i></h5>
+                                    @endif
+                                    <strong>{{ $categoria->nombre }}</strong>
+                                </a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            @endforeach --}}
+
+
+
+
+
+
+
+
+
+
                 <!-- Producto 1 -->
 <div class="col-lg-3 col-md-6">
     <div class="card h-100 mb-4">
