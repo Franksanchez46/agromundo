@@ -81,7 +81,7 @@
 
 @section('content')
 <br>
-<h2 class="mi-mt-5"><i class="fa-solid fa-plus"></i> Añadir productos</h2>
+<h2 class="mi-mt-5"><i class="fa-solid fa-plus"></i> Crear producto</h2>
 
 <main>
     <div class="mi-formulario-nuevo-producto">
@@ -142,11 +142,12 @@
                             <input type="number" name="variantes[0][stock]" class="form-control" placeholder="Stock">
                         </div>
                         <div class="col-auto">
-                            <button type="button" class="btn btn-danger btn-remove-variante">X</button>
+<button type="button" class="btn-x-personalizado btn-remove-variante">X</button>
                         </div>
                     </div>
                 </div>
-                <button type="button" id="add-variante" class="btn btn-primary btn-sm mt-2">Agregar variante</button>
+                <button type="button" id="add-variante" class="btn admin-btn-filtrar">
+                <i class="fas fa-plus"></i> Agregar variante</button>
             </div>
 
             <!-- Mensajes de error -->

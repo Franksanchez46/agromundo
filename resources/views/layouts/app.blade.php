@@ -33,6 +33,7 @@
 </head>
 <body data-authenticated="{{ auth()->check() ? 'true' : 'false' }}">
 
+    <div class="page-wrapper d-flex flex-column min-vh-100">
 {{-- Navbar dinámico según sesión y rol --}}
 @if (auth()->check())
     @if (auth()->user()->rol_id === 1)
@@ -74,12 +75,13 @@
  --}}
 
     {{-- Contenido de cada página --}}
-    <main>
+    <main class="flex-grow-1">
         @yield('content')
     </main>
 
     {{-- Footer --}}
     @include('partials.footer')
+</div>
 
     {{-- Scripts --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

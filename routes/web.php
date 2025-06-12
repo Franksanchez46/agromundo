@@ -29,52 +29,12 @@ Route::get('/inicio', function () {
 Route::get('/create', [ProductoController::class, 'create'])->name('productos.create');
 Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
  
-/* // Rutas protegidas para usuarios autenticados
-Route::middleware(['auth'])->group(function () {
-    
-    // Mostrar perfil
-    Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
-    
-    // Editar perfil
-    Route::get('/profile/edit', [UserController::class, 'editProfile'])->name('profile.edit');
-    
-    // Actualizar perfil
-    Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('profile.update');
-    
-    // Logout (cerrar sesión)
-    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-}); */
+
 
 // routes/web.php
 Route::get('/pesticidas', [ProductoController::class, 'indexPesticidas']);
 
-// routes/web.php
-
-/* 
-Route::get('/categoria/{categoria}', function ($categoria) {
-    // Aquí, se definen los productos según la categoría
-    $productos = [];
-
-    if ($categoria == 'pesticidas') {
-        $productos = [
-            ['id' => 1, 'nombre' => 'EcoGuard', 'descripcion' => 'Calidad premium', 'precio' => '20000', 'imagen' => 'pesti1.png'],
-            ['id' => 2, 'nombre' => 'PestBlock Max', 'descripcion' => 'Calidad premium', 'precio' => '20000', 'imagen' => 'pesti2.png'],
-            // Añadir más productos
-        ];
-    } elseif ($categoria == 'abonos') {
-        $productos = [
-            ['id' => 1, 'nombre' => 'Abono Natural', 'descripcion' => 'Abono orgánico de calidad', 'precio' => '15000', 'imagen' => 'abono1.png'],
-            ['id' => 2, 'nombre' => 'Abono para Plantas', 'descripcion' => 'Abono adecuado para todo tipo de plantas', 'precio' => '18000', 'imagen' => 'abono2.png'],
-            // Añadir más productos
-        ];
-    }
-    // Aquí puedes agregar más condiciones para otras categorías
-
-    return view('productos.categoria', compact('categoria', 'productos'));
-});
- */
-
- Route::get('/categoria/{categoriaNombre}', [ProductoController::class, 'categoria'])->name('productos.categoria');
+ 
 
 Route::get('productos/create', [ProductoController::class, 'create'])->name('productos.create');
 Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
@@ -145,3 +105,42 @@ Route::post('/carrito/actualizar', [CarritoController::class, 'actualizar'])->na
 Route::post('/carrito/eliminar', [CarritoController::class, 'eliminar'])->name('carrito.eliminar');
 Route::post('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
 Route::get('/carrito/contenido', [CarritoController::class, 'contenido'])->name('carrito.contenido');
+
+use App\Http\Controllers\CategoriaController;
+
+
+ 
+Route::resource('categorias', CategoriaController::class)->names([
+    'index' => 'admin.categorias.index',
+    'create' => 'categorias.create',
+    'store' => 'admin.categorias.store',
+    'edit' => 'admin.categorias.edit',
+    'update' => 'categorias.update',
+    'destroy' => 'admin.categorias.destroy',
+]);
+
+
+/* Route::prefix('admin')->name('categorias.')->middleware('auth')->group(function () {
+    Route::resource('categorias', CategoriaController::class);
+}); */
+
+
+use App\Http\Controllers\Admin\CategoriaController as AdminCategoriaController;
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('categorias', AdminCategoriaController::class);
+});
+
+Route::get('/categoria/{slug}', [CategoriaController::class, 'show']);
+
+
+
+Route::get('/productos/categoria/{categoriaNombre}', [ProductoController::class, 'categoria'])
+    ->name('productos.categoria');
+
+
+
+Route::get('/productos/categoria/id/{id}', [ProductoController::class, 'categoriaPorId'])
+    ->name('productos.categoria.id');
+
+
+    Route::get('/categoria/id/{id}', [ProductoController::class, 'categoriaPorId'])->name('productos.categoria.id');

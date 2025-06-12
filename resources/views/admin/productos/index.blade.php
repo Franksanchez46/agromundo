@@ -29,7 +29,19 @@
                 <i class="fas fa-times"></i> Limpiar
             </a>
         </div>
+
+                    <!-- Botón Crear producto (mismo estilo que filtrar) -->
+        <div class="row">
+        <div class="col text-end">
+            <a href="{{ route('productos.create') }}" class="btn admin-btn-filtrar">
+                <i class="fas fa-plus"></i> Crear nuevo producto
+            </a>
+        </div>
+        </div>
     </form>
+
+
+
 
     <table class="table table-bordered">
         <thead>

@@ -19,7 +19,7 @@ class ProductoController extends Controller
     {  
         
 
-        $iconos =[
+/*         $iconos =[
             'pesticidas' => 'fa-bug-slash',
             'abonos' => 'fas fa-leaf me-2',
             'animales' => 'fa-cow',
@@ -27,7 +27,7 @@ class ProductoController extends Controller
             'concentrado mascotas' => 'fa-paw',
             'medicamentos' => 'fa-capsules',
             'herramientas' => 'fa-tools',
-        ];
+        ]; */
 
 
                 //nuevo
@@ -38,7 +38,9 @@ class ProductoController extends Controller
 
 
         if ($categoria) {
-            $categoria->icono = $iconos[strtolower($categoria->nombre)] ?? 'fa-question-circle';
+            /* $categoria->icono = $iconos[strtolower($categoria->nombre)] ?? 'fa-question-circle'; */
+            $categoria->icono = $categoria->icono ?? 'fa-question-circle';
+
 
            
             // Obtener productos de la categoría seleccionada
@@ -56,6 +58,22 @@ class ProductoController extends Controller
 
     }
 
+    public function categoriaPorId($id)
+{
+    $categoria = Categoria::find($id);
+
+    if ($categoria) {
+        $categoria->icono = $categoria->icono ?? 'fa-question-circle';
+
+        $productos = Producto::where('categoria_id', $categoria->id)->get();
+
+        return view('productos.categoria', compact('categoria', 'productos'));
+    } else {
+        return redirect()->route('productos.index')->with('error', 'Categoría no encontrada');
+    }
+}
+
+
 
     // Método para mostrar todos los productos (sin filtro de categoría)
 public function index()
@@ -70,6 +88,7 @@ public function index()
 
     $productos = Producto::all();
     $categoria = null;
+    $categorias = Categoria::all(); // Trae todas las categorías
 
     return view('productos.categoria', compact('productos', 'categoria'));
 }

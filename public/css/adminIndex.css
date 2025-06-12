@@ -44,3 +44,34 @@
     gap: 100px;
     align-items: center;
 }
+
+/* Estilo personalizado para botón X */
+.btn-x-personalizado {
+    background-color: #b8404c; /* rojo Bootstrap */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover que aclara un poco el rojo y pone la X en negro */
+.btn-x-personalizado:hover {
+    background-color: #d81327; /* rojo ligeramente más claro */
+    color: black;
+}
+
+/* Cambiar color del ítem activo en dropdown (cuando se hace clic) */
+.dropdown-item:active {
+    background-color: #28a745 !important; /* Verde Bootstrap */
+    color: white !important; /* Texto blanco */
+}
+
+.admin-footer {
+    background-color: #212529; /* color oscuro tipo navbar */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}

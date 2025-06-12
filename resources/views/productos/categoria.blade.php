@@ -9,6 +9,7 @@
     @endif
 
     <div class="box-container" id="lista-1">
+        
         @foreach ($productos as $producto)
             <div class="box">
                 <img src="{{ asset('storage/' . $producto->imagen) }}" alt="{{ $producto->nombre }}">

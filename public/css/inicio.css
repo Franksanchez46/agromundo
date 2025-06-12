@@ -18,6 +18,8 @@ body {
     flex-direction: column;
 
     margin-top: 60px; /* Espacio superior para evitar que el contenido se superponga con la barra de navegación */
+    outline: 1px solid red;
+    
 }
 
 .card-img-top {
@@ -247,6 +249,27 @@ body {
     transform: scale(1.1);
     color: #1cce1c;
 }
+
+.categoria-link {
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+
+.categoria-link:hover {
+    transform: scale(1.1);
+    color: #1cce1c;
+}
+
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* para scroll suave en móviles */
+}
+
+
 /* Estilos para el pie de página */
 /* Estilos para la parte inferior del footer */
 .footer-bottom {
@@ -254,6 +277,11 @@ body {
     padding: 20px 0; /* Espaciado interno */
     margin-top: 40px; /* Espacio superior */
     text-align: center; /* Centra el contenido */
+    color: white; /* Color del texto */
+
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 /* Estilos para el texto de derechos de autor */
