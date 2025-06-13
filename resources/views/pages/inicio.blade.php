@@ -27,15 +27,9 @@
 
     @include('partials.carrusel')
 
-    <!-- Catálogo de Productos -->
-{{--     <section id="catalogo" class="container-fluid">
-        <h2 class="text-center"><i class="fas fa-leaf me-2"></i>Nuestro Catálogo</h2><br><br>
-
-        <div class="container">
-            <div class="row mb-5 g-4"> --}}
 
 
-                @include('partials.categorias')
+    @include('partials.categorias')
 
 
 

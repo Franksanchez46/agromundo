@@ -106,7 +106,7 @@ Route::post('/carrito/eliminar', [CarritoController::class, 'eliminar'])->name('
 Route::post('/carrito/vaciar', [CarritoController::class, 'vaciar'])->name('carrito.vaciar');
 Route::get('/carrito/contenido', [CarritoController::class, 'contenido'])->name('carrito.contenido');
 
-use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\Admin\CategoriaController;
 
 
  
@@ -130,6 +130,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('categorias', AdminCategoriaController::class);
 });
 
+
 Route::get('/categoria/{slug}', [CategoriaController::class, 'show']);
 
 
@@ -143,4 +144,5 @@ Route::get('/productos/categoria/id/{id}', [ProductoController::class, 'categori
     ->name('productos.categoria.id');
 
 
-    Route::get('/categoria/id/{id}', [ProductoController::class, 'categoriaPorId'])->name('productos.categoria.id');
+   /*  Route::get('/categoria/id/{id}', [ProductoController::class, 'categoriaPorId'])->name('productos.categoria.id'); */
+
