@@ -6,9 +6,13 @@
         <div id="cart-content">
             <!-- Aquí se cargan los productos del carrito por JS -->
         </div>
-        <div id="cart-footer">
-            <div id="cart-total"></div>
-            <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button>
-        </div>
+<div id="cart-footer">
+    <div id="cart-total" style="margin-bottom: 10px;"></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;">
+        <button class="btn btn-danger" style="flex: 1; min-width: 140px;" onclick="vaciarCarrito()">Vaciar carrito</button>
+        <div id="epayco-button-container" style="flex: 1; min-width: 140px; display: flex; justify-content: center;"></div>
+    </div>
+</div>
+
     </div>
 </div>

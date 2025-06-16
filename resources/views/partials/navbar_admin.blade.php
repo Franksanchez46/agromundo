@@ -16,6 +16,20 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarAdmin">
             <ul class="navbar-nav">
 
+                                    <!-- Enlace a categorías -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('admin.categorias.index') }}">
+            <i class="fa-solid fa-layer-group"></i> Categorías
+        </a>
+    </li>
+
+    <!-- carrusel -->
+               <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.carrusel.index') }}">
+                        <i class="fas fa-film"></i> Editar carrusel
+                    </a>
+                </li> 
+
                 <!-- Enlace a productos -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.productos.index') }}">
@@ -30,12 +44,7 @@
                     </a>
                 </li> --}}
 
-                    <!-- Enlace a categorías -->
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('admin.categorias.index') }}">
-            <i class="fa-solid fa-layer-group"></i> Categorías
-        </a>
-    </li>
+
 
                 <!-- Menú desplegable del usuario -->
                 <li class="nav-item dropdown">

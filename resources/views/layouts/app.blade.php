@@ -28,6 +28,7 @@
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="epayco-public-key" content="{{ config('epayco.public_key') }}">
 
 
 </head>

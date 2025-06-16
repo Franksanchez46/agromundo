@@ -144,5 +144,19 @@ Route::get('/productos/categoria/id/{id}', [ProductoController::class, 'categori
     ->name('productos.categoria.id');
 
 
-   /*  Route::get('/categoria/id/{id}', [ProductoController::class, 'categoriaPorId'])->name('productos.categoria.id'); */
+use App\Http\Controllers\PagoController;
 
+Route::get('/pago/respuesta',    [PagoController::class, 'respuesta'])
+     ->name('pago.respuesta');
+
+Route::get('/pago/confirmacion', [PagoController::class, 'confirmacion'])
+     ->name('pago.confirmacion');
+// Ruta para iniciar el proceso de pago
+
+
+/* use App\Http\Controllers\Admin\CarruselController;// Página de bienvenida
+use App\Http\Controllers\OfertaController;
+Route::get('/ofertas', [OfertaController::class, 'index']);
+Route::get('/admin/productos/carrusel/index', [CarruselController::class, 'index'])->name('admin.carrusel.index');
+Auth::routes(['verify' => true, 'reset' => true, 'register' => false, 'login'=> false]);
+ */
