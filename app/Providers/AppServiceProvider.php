@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        view::composer('partials.categorias', function ($view){
+        View::composer('partials.categorias', function ($view){
             $view->with('categorias', Categoria::all());
         });
 
