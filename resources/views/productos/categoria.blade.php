@@ -10,10 +10,11 @@
 
     <div class="box-container" id="lista-1">
         
-        @foreach ($productos as $producto)
-            <div class="box">
+        @foreach ($productos as $index => $producto)
+        <div class="box {{ $index > 11 ? 'oculto' : '' }}">
                 <img src="{{ asset('storage/' . $producto->imagen) }}" alt="{{ $producto->nombre }}">
                 <div class="product-txt">
+                    <br>
                     <h3 class="nombre-corto" data-fullnombre="{{ $producto->nombre }}">
                         {{ \Illuminate\Support\Str::limit($producto->nombre, 22) }}
                     </h3>
@@ -21,14 +22,16 @@
                         {{ \Illuminate\Support\Str::limit($producto->descripcion, 80) }}
                     </p>
                     <button class="ver-mas-btn-cat"
-                        data-producto="{{ $producto->id }}"
-                        data-nombre="{{ $producto->nombre }}"
-                        data-descripcion="{{ $producto->descripcion }}"
-                        data-imagen="{{ asset('storage/' . $producto->imagen) }}"
-                        data-variantes='@json($producto->variantes)'
-                        data-preciobase="{{ $producto->precio ?? 0 }}">
-                        Ver más
-                    </button>
+    data-producto="{{ $producto->id }}"
+    data-nombre="{{ $producto->nombre }}"
+    data-descripcion="{{ $producto->descripcion }}"
+    data-imagen="{{ asset('storage/' . $producto->imagen) }}"
+    data-variantes='@json($producto->variantes)'
+    data-preciobase="{{ $producto->precio ?? 0 }}"
+    data-descuentos='@json($producto->variantes->pluck("oferta.descuento", "id"))'>
+    Ver más
+</button>
+
                 </div>
             </div>
         @endforeach
@@ -45,7 +48,9 @@
         <h3 id="modal-nombre-cat"></h3>
         <p id="modal-descripcion-cat"></p>
         <div id="modal-variantes"></div>
-        <p class="precio" id="modal-precio-cat"></p>
+        <p class="precio" id="modal-precio-cat" ></p>
+        
+
         <a href="#" class="agregar-carrito btn-3" id="modal-agregar-cat">Agregar al carrito</a>
     </div>
 </div>
@@ -57,5 +62,6 @@
 
 @section('scripts')
 <script src="{{ asset('js/descripcion.js') }}"></script>
+  <script src="{{ asset('js/redireccion.js') }}"></script> {{-- JS nuevo --}}
 
 @endsection

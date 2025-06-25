@@ -19,13 +19,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav ms-auto">
 
-                {{-- <li class="nav-item">
-                    <div class="buscador-contenedor">
-                        <input type="text" class="buscador-input" placeholder="Buscar">
-                        <div class="buscador-boton">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                    </div> --}}
+
 
                                         <li class="nav-item">
                         <form action="{{ route('busqueda.productos') }}" method="GET" class="buscador-contenedor" style="display: flex; align-items: center;">
@@ -36,15 +30,6 @@
                         </form>
                     </li>
 
-
-                    {{-- <div class="buscador-contenedor" style="position: relative;">
-                        <input type="text" class="buscador-input" id="buscador-navbar" placeholder="Buscar">
-                        <div class="buscador-boton" id="buscador-btn">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </div>
-                        <div id="buscador-resultados" class="buscador-resultados" style="display:none;"></div>
-                    </div> --}}
-                
 
                 </li>
 

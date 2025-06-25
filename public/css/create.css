@@ -23,6 +23,20 @@
       text-shadow: 0 0 10px #00ff00, 0 0 20px #00ffea;
     }
   }
+
+  .mi-formulario-nuevo-producto input,
+.mi-formulario-nuevo-producto textarea,
+.mi-formulario-nuevo-producto select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
   
   /* formulario */
   .mi-formulario-nuevo-producto {

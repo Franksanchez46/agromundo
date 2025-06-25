@@ -3,6 +3,11 @@
     <div class="modal-contenido-cat" style="min-width: 350px; position: relative;">
         <span class="cerrar-cat" onclick="cerrarCarrito()">&times;</span>
         <h4>Carrito de compras</h4>
+        @if(session('error'))
+    <div class="alert alert-danger" style="margin-bottom: 10px;">
+        {{ session('error') }}
+    </div>
+@endif
         <div id="cart-content">
             <!-- Aquí se cargan los productos del carrito por JS -->
         </div>

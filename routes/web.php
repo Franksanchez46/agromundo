@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 // Página de bienvenida
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.inicio');
 });
 
 Auth::routes(['verify' => true, 'reset' => true, 'register' => false, 'login' => false]);
@@ -56,21 +56,9 @@ Route::post('/logout', function () {
     return redirect('/login');
 })->name('logout');
 
-// nuevas rutas carrito 
-// web.php (Laravel)
+
 use App\Http\Controllers\CartController;  // Importa el controlador
-/* Route::middleware(['auth'])->group(function () { */
-// Ruta para almacenar productos en el carrito
-/* Route::get('/cart', [CartController::class, 'index']);
 
-Route::post('/cart/store', [CartController::class, 'store']);
-
-Route::delete('/cart/destroy/{id}', [CartController::class, 'destroy']);
-
-Route::put('/cart/update/{id}', [CartController::class, 'update']);
-
-Route::delete('/cart/clear', [CartController::class, 'clear']); */
-/* }); */
 
 Route::get('/nosotro', function () {
     return view('nosotros');
@@ -89,9 +77,6 @@ use App\Http\Controllers\ModoVistaController;
 
 Route::post('/cambiar-modo', [ModoVistaController::class, 'cambiarModo'])->name('cambiar.modo');
 
-/* use App\Http\Controllers\BusquedaController;
-
-Route::get('/buscar-ajax', [BusquedaController::class, 'ajax'])->name('busqueda.global'); */
 
 
 use App\Http\Controllers\BusquedaController;
@@ -120,9 +105,7 @@ Route::resource('categorias', CategoriaController::class)->names([
 ]);
 
 
-/* Route::prefix('admin')->name('categorias.')->middleware('auth')->group(function () {
-    Route::resource('categorias', CategoriaController::class);
-}); */
+
 
 
 use App\Http\Controllers\Admin\CategoriaController as AdminCategoriaController;
@@ -154,9 +137,18 @@ Route::get('/pago/confirmacion', [PagoController::class, 'confirmacion'])
 // Ruta para iniciar el proceso de pago
 
 
-/* use App\Http\Controllers\Admin\CarruselController;// Página de bienvenida
+use App\Http\Controllers\Admin\CarruselController;// Página de bienvenida
 use App\Http\Controllers\OfertaController;
 Route::get('/ofertas', [OfertaController::class, 'index']);
 Route::get('/admin/productos/carrusel/index', [CarruselController::class, 'index'])->name('admin.carrusel.index');
-Auth::routes(['verify' => true, 'reset' => true, 'register' => false, 'login'=> false]);
- */
+Auth::routes(['verify' => true, 'reset' => true, 'register' => false, 'login'=>false]);
+
+
+Route::resource('ofertas', OfertaController::class);
+
+Route::post('/carrito/vaciar', [App\Http\Controllers\CarritoController::class, 'vaciar'])->name('carrito.vaciar');
+
+Route::get('/carrito', [App\Http\Controllers\CarritoController::class, 'mostrar'])->name('carrito.mostrar');
+
+
+Route::post('/carrito/descontar-stock', [App\Http\Controllers\CarritoController::class, 'descontarStock'])->name('carrito.descontarStock');

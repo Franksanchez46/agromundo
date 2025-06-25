@@ -17,17 +17,6 @@ class ProductoController extends Controller
     public function categoria($categoriaNombre)
     
     {  
-        
-
-/*         $iconos =[
-            'pesticidas' => 'fa-bug-slash',
-            'abonos' => 'fas fa-leaf me-2',
-            'animales' => 'fa-cow',
-            'concentrado para animales de granja' => 'fa-box',
-            'concentrado mascotas' => 'fa-paw',
-            'medicamentos' => 'fa-capsules',
-            'herramientas' => 'fa-tools',
-        ]; */
 
 
                 //nuevo
@@ -111,7 +100,7 @@ public function index()
         $request->validate([
             'nombre' => 'required',
             'descripcion' => 'required',
-            'precio' => 'required|numeric',
+            'precio' => 'numeric',
             'imagen' => 'required|image|mimes:jpeg,png,jpg,gif|max:10000',
             'categoria_id' => 'required|exists:categorias,id', // Validar que la categoría exista
         ]);

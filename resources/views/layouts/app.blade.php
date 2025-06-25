@@ -8,7 +8,8 @@
 
     {{-- Estilos --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> --}}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
     <link rel="stylesheet" href="{{ asset('css/productos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/carrusel.css') }}">
@@ -22,6 +23,10 @@
     <link rel="stylesheet" href="{{ asset('css/buscador_flotante.css') }}">
     <link rel="stylesheet" href="{{ asset('css/carrito.css') }}">
 
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
+
     <!-- Splide.js CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
 
@@ -33,6 +38,8 @@
 
 </head>
 <body data-authenticated="{{ auth()->check() ? 'true' : 'false' }}">
+
+    
 
     <div class="page-wrapper d-flex flex-column min-vh-100">
 {{-- Navbar dinámico según sesión y rol --}}
@@ -54,26 +61,7 @@
 @endif
 
 @include('components.carrito')
-{{-- @include('components.buscador-flotante') --}}
 
-
-        {{-- Mostrar mensajes de éxito y error --}}
-{{--         <div class="container mt-3">
- --}}            {{-- Mensaje de error --}}
-{{--             @if(session('error'))
-                <div class="alert alert-danger">
-                    {{ session('error') }}
-                </div>
-            @endif --}}
-    
-            {{-- Mensaje de éxito --}}
-{{--             @if(session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-        </div>
- --}}
 
     {{-- Contenido de cada página --}}
     <main class="flex-grow-1">
@@ -95,7 +83,13 @@
     <!-- Splide.js JS -->
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js" defer></script>
 
+<script>
+    // ¿Está autenticado?
+    window.usuarioLogueado = {{ auth()->check() ? 'true' : 'false' }};
 
+    // URL segura a la ruta de login
+    window.rutaLogin = "{{ route('login') }}";
+</script>
     @include('components.alerts')
 
 

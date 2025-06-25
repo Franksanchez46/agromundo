@@ -17,9 +17,9 @@
       </p>
     </div>
        <div class="image-stack">
-      <img src="{{ asset('nosotros/chunky.jpg') }}" alt="Imagen de empresa agropecuaria" class="img-1"> 
-      <img src="{{ asset('nosotros/chunky1.jpg') }}" alt="Imagen de empresa agropecuaria" class="img-2">
-      <img src="{{ asset('nosotros/oh.jpg') }}" alt="Imagen de empresa agropecuaria" class="img-3">
+      <img src="{{ asset('nosotros/fin.jpg') }}" alt="Imagen de empresa agropecuaria" class="img-1"> 
+      <img src="{{ asset('nosotros/no.jpg') }}" alt="Imagen de empresa agropecuaria" class="img-2">
+      <img src="{{ asset('nosotros/nos.jpg') }}" alt="Imagen de empresa agropecuaria" class="img-3">
     </div>
   </div>
 </section>

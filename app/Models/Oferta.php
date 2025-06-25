@@ -13,6 +13,16 @@ class Oferta extends Model
         'imagen',
         'descuento',
         'alt',
-        'url',
+        'variante_id',
     ];
+
+    public function oferta()
+{
+    return $this->hasOne(Oferta::class);   // oferta.variante_id → variante.id
+}
+
+      public function variante()
+    {
+        return $this->belongsTo(Variante::class);
+    }
 }

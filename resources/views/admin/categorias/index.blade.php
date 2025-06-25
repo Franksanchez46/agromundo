@@ -1,48 +1,4 @@
-{{-- @extends('layouts.app') <!-- Aquí se usa el layout admin que contiene el navbar y footer del panel de administración -->
 
-@section('content')
-<div class="container">
-    <h1>Administrar Categorías</h1>
-    
-    <a href="{{ route('categorias.create') }}" class="btn btn-primary mb-3">Crear Nueva Categoría</a>
-    
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Imagen</th>
-                <th>Icono</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($categorias as $categoria)
-                <tr>
-                    <td>{{ $categoria->nombre }}</td>
-                    <td>{{ $categoria->descripcion }}</td>
-                    <td>
-                        @if($categoria->imagen)
-                            <img src="{{ Storage::url($categoria->imagen) }}" alt="{{ $categoria->nombre }}" width="50">
-                        @endif
-                    </td>
-                    <td>{{ $categoria->icono }}</td>
-                    <td>
-                        <a href="{{ route('categorias.edit', $categoria->id) }}" class="btn btn-warning">Editar</a>
-                        
-                        <form action="{{ route('categorias.destroy', $categoria->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar esta categoría?')">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-@endsection
- --}}
 
  @extends('layouts.app')
 

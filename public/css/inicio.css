@@ -22,6 +22,8 @@ body {
     
 }
 
+
+
 .card-img-top {
     width: 100%;  /* Hace que la imagen ocupe todo el ancho de la tarjeta */
     height: auto; /* Mantiene la proporción original de la imagen */
@@ -36,6 +38,7 @@ body {
     align-items: center;     /* Centra el contenido horizontalmente */
     height: 100px; /* Ajusta la altura que quieras para el espacio blanco */
 }
+
 
 /* .col-lg-3, .col-md-6 {
     display: flex;
@@ -250,7 +253,11 @@ body {
     color: #1cce1c;
 }
 
-
+.categoria-link:hover,
+.categoria-link:hover i,
+.categoria-link:hover h5 {
+    color: #1cce1c;
+}
 .categoria-link {
     text-decoration: none;
     color: black;
@@ -284,6 +291,9 @@ body {
     width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
+}
+.no-navbar .navbar {
+    display: none !important;
 }
 
 /* Estilos para el texto de derechos de autor */

@@ -38,7 +38,7 @@
 
 .ofertas-header h2 {
   font-size: 2rem;
-  color: var(--verde-oscuro);
+  color: #000;
   margin: 0;
   display: inline-block;
   transition: var(--transicion-base);
@@ -46,12 +46,15 @@
 
 .ofertas-header i {
   margin-right: 10px;
-  color: var(--verde-vivo);
+  color: #000;
 }
 
 .ofertas-header p {
-  margin-top: 5px;
-  font-style: italic;
+  font-family: inherit; /* o especifica una como 'Arial', 'sans-serif' si es fija */
+    color: #000;
+}
+.ofertas-header h2:hover i {
+  color: var(--verde-vivo); /* opcional */
 }
 
 /* Contenedor del carrusel mejorado */
@@ -850,7 +853,7 @@
   }
   
   .slide-info {
-    padding: 15px;
+    padding: 70px;
     bottom: 60px;
     position: relative; /* Cambiado de absolute a relative */
     text-align: center;

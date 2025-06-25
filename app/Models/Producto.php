@@ -32,4 +32,17 @@ class Producto extends Model
     {
         return $this->hasMany(Variante::class);
     }
+
+        // Relación: un producto tiene muchas ofertas a través de sus variantes
+/*     public function ofertas()
+    {
+        return $this->hasManyThrough(Oferta::class, Variante::class);
+    } */
+
+    public function oferta()
+{
+    return $this->hasOneThrough(Oferta::class, Variante::class, 'producto_id', 'variante_id', 'id', 'id');
+}
+
+
 }

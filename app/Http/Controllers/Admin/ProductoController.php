@@ -16,7 +16,7 @@ class ProductoController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Producto::query()->with('categoria');
+        $query = Producto::query()->with('categoria', 'variantes');
 
         if ($request->filled('nombre')) {
             $query->where('nombre', 'like', '%' . $request->nombre . '%');
@@ -49,7 +49,7 @@ class ProductoController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'descripcion' => 'required|string',
-            'precio' => 'required|numeric',
+            'precio' => 'numeric',
             'categoria_id' => 'required|exists:categorias,id',
             'imagen' => 'nullable|image|max:10000',
             'variantes' => 'nullable|array',
@@ -112,7 +112,7 @@ class ProductoController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'descripcion' => 'required|string',
-            'precio' => 'required|numeric',
+            'precio' => 'numeric',
             'categoria_id' => 'required|exists:categorias,id',
             'imagen' => 'nullable|image|max:10000',
             'variantes' => 'nullable|array',

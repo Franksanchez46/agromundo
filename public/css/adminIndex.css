@@ -75,3 +75,23 @@
     padding: 15px 0;
     text-align: center;
 }
+
+.pagination .page-link,
+.pagination .page-link:focus,
+.pagination .page-link:hover,
+.pagination .page-link:visited,
+.pagination .page-link:link {
+    color: #28a745 !important;
+    border-color: #28a745 !important;
+    text-decoration: none !important;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #fff !important;
+}
+
+.pagination .page-link:hover {
+    background-color: #eafaf1 !important;
+}

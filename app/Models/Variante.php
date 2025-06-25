@@ -20,4 +20,23 @@ class Variante extends Model
     {
         return $this->belongsTo(Producto::class);
     }
+
+        public function oferta()
+    {
+        return $this->hasOne(Oferta::class);
+    }
+
+    // Calcula el precio con descuento si hay oferta
+    public function getPrecioConDescuentoAttribute()
+    {
+        if ($this->oferta && $this->oferta->descuento > 0) {
+            return $this->precio - ($this->precio * $this->oferta->descuento / 100);
+        }
+        return $this->precio;
+    }
+
+    public function variantes() {
+    return $this->hasMany(Variante::class);
+}
+
 }

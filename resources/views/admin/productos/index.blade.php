@@ -48,8 +48,9 @@
             <tr>
                 <th>Imagen</th>
                 <th>Nombre</th>
-                <th>Precio</th>
+                {{-- <th>Precio</th> --}}
                 <th>Categoría</th>
+                <th>Stock</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -58,8 +59,11 @@
             <tr>
                 <td><img src="{{ asset('storage/' . $producto->imagen) }}" width="80"></td>
                 <td>{{ $producto->nombre }}</td>
-                <td>${{ number_format($producto->precio, 0, ',', '.') }}</td>
+               {{--  <td>${{ number_format($producto->precio, 0, ',', '.') }}</td> --}}
                 <td>{{ $producto->categoria->nombre }}</td>
+        <td>
+            {{ $producto->variantes->sum('stock') }} unidades
+        </td>
                 <td>
                     <a href="{{ route('admin.productos.edit', $producto->id) }}" class="btn btn-warning btn-sm">
                         <i class="fas fa-edit"></i> Editar
@@ -76,5 +80,25 @@
             @endforeach
         </tbody>
     </table>
+    {{ $productos->links() }}
 </div>
+<style>
+.pagination .page-link,
+.pagination .page-link:focus,
+.pagination .page-link:hover {
+    color: #28a745 !important;
+    border-color: #28a745 !important;
+    text-decoration: none !important;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #28a745 !important;
+    border-color: #28a745 !important;
+    color: #fff !important;
+}
+
+.pagination .page-link:hover {
+    background-color: #eafaf1 !important;
+}
+</style>
 @endsection

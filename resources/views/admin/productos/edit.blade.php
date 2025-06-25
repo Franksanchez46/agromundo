@@ -23,10 +23,10 @@
             </div>
 
             <!-- Precio -->
-            <div class="form-group mb-3">
+            {{-- <div class="form-group mb-3">
                 <label for="precio">Precio</label>
                 <input type="text" id="precio" name="precio" class="mi-formulario-nuevo-producto" value="{{ old('precio', $producto->precio) }}" required>
-            </div>
+            </div> --}}
 
             <!-- Categoría -->
             <div class="form-group mb-3">
@@ -87,13 +87,16 @@
             @endif
 
             <!-- Botón -->
-            <div style="text-align: center; margin: 20px 0;">
-                <button type="submit" class="mi-button">
-                    <span class="mi-shadow"></span>
-                    <span class="mi-edge"></span>
-                    <span class="mi-front">GUARDAR CAMBIOS</span>
+            <div class="d-flex gap-2 justify-content-center my-4">
+                <button type="submit" class="btn admin-btn-filtrar">
+                    <i class="fas fa-save"></i> Guardar cambios
                 </button>
+
+                <a href="{{ route('admin.productos.index') }}" class="btn btn-secondary">
+                    Cancelar
+                </a>
             </div>
+
         </form>
     </div>
 </main>

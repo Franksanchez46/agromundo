@@ -26,9 +26,9 @@
     <!-- carrusel -->
                <li class="nav-item">
                     <a class="nav-link" href="{{ route('admin.carrusel.index') }}">
-                        <i class="fas fa-film"></i> Editar carrusel
+                        <i class="fas fa-film"></i> Carrusel
                     </a>
-                </li> 
+    </li> 
 
                 <!-- Enlace a productos -->
                 <li class="nav-item">
@@ -36,16 +36,7 @@
                         <i class="fa-solid fa-boxes-stacked"></i> Productos
                     </a>
                 </li>
-
-                <!-- Crear producto -->
-               {{--  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('productos.create') }}">
-                        <i class="fa-solid fa-plus"></i> Crear producto
-                    </a>
-                </li> --}}
-
-
-
+                
                 <!-- Menú desplegable del usuario -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button"

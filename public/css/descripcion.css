@@ -81,6 +81,22 @@
     font-weight: bold;
 }
 
+.ocultar-en-carrusel {
+    display: none !important;
+}
+
+.oculto {
+    display: none;
+}
+
+#modal-nombre-cat {
+    margin-top: 15px; /* Opcional, si prefieres dar espacio desde el título */
+}
+
+.precio-original   { text-decoration: line-through; color:#888; margin-right:8px; }
+.precio-descuento  { color:#a71c1c; font-weight:bold; }
+
+
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }

@@ -1,0 +1,95 @@
+/* Estilos para el pie de página */
+.footer {
+    background: linear-gradient(-135deg, #1cce1c, #2b702b);
+    color: #fff;
+    padding: 40px 0 0;
+    position: relative;
+    margin-top: auto;
+}
+
+/* Información principal */
+.footer-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.footer-info p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Redes sociales en la columna central */
+.footer-links h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+}
+.footer-links ul li a:hover {
+    color: #27a22f;
+    transform: translateX(5px);
+}
+
+/* Botón de Instagram */
+.footer-links .instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 8px 18px;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.footer-links .instagram-btn:hover {
+    background: #27a22f;
+    color: #fff;
+    text-decoration: none;
+    transform: none;
+}
+
+/* Contacto */
+.footer-contact h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-contact p {
+    font-size: 0.95rem;
+    line-height: 2;
+}
+.footer-contact i {
+    color: #064b0b;
+}
+
+/* Copyright */
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+}
