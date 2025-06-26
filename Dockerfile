@@ -26,6 +26,9 @@ RUN chown -R www-data:www-data /var/www \
 # Exponer puerto
 EXPOSE 8000
 
+RUN npm install && npm run build
+
+
 # Comando de arranque (sin migrate)
 # CMD php artisan config:cache && php artisan serve --host=0.0.0.0 --port=${PORT}
  CMD php artisan config:cache && php -S 0.0.0.0:${PORT} -t public
