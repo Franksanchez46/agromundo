@@ -31,7 +31,7 @@ RUN chown -R www-data:www-data /var/www \
     && chmod -R 755 /var/www/bootstrap/cache
 
 # Exponer el puerto que usará la app
-EXPOSE 8000
+EXPOSE ${PORT}
 
 # Comando de inicio
 CMD php artisan config:cache && php -S 0.0.0.0:${PORT} -t public
