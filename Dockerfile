@@ -27,6 +27,6 @@ RUN chown -R www-data:www-data /var/www \
 EXPOSE 8000
 
 # Comando de arranque (sin migrate)
-# CMD php artisan config:cache && php artisan serve --host=0.0.0.0 --port=${PORT}
-CMD php artisan config:cache && php -S 0.0.0.0:${PORT} -t public
+ CMD php artisan config:cache && php artisan serve --host=0.0.0.0 --port=${PORT}
+# CMD php artisan config:cache && php -S 0.0.0.0:${PORT} -t public
 
